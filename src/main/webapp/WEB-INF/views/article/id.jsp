@@ -2,6 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<link href="${pageContext.request.contextPath}/static/plugin/prettify/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/plugin/prettify/prettify.js"></script>
 <!-- Example row of columns -->
 <div class="row-fluid">
     <div class="span9">
@@ -46,3 +48,9 @@
     </div>
     <!--/span-->
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        prettyPrint();
+    })
+</script>
