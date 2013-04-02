@@ -41,7 +41,7 @@ public class GenericDaoImpl<M extends Serializable, PK extends Serializable> imp
             countHQL = "select count(*) from " + className + " t";
             Session session = sessionFactory.getCurrentSession();
             String countString = session.createQuery(countHQL).uniqueResult().toString();
-            SessionFactoryUtils.closeSession(session);
+//            SessionFactoryUtils.closeSession(session);
             return Long.parseLong(countString);
         } catch (Exception e) {
             throw new DatabaseException(e);
@@ -54,7 +54,7 @@ public class GenericDaoImpl<M extends Serializable, PK extends Serializable> imp
             countHQL = "select count(*) from " + className + " t where isActive = 1";
             Session session = sessionFactory.getCurrentSession();
             String countString = session.createQuery(countHQL).uniqueResult().toString();
-            SessionFactoryUtils.closeSession(session);
+//            SessionFactoryUtils.closeSession(session);
             return Long.parseLong(countString);
         } catch (Exception e) {
             throw new DatabaseException(e);
@@ -81,7 +81,7 @@ public class GenericDaoImpl<M extends Serializable, PK extends Serializable> imp
         Criteria criteria = sessionFactory.getCurrentSession().createCriteria(type);
         criteria.add(Expression.eq(property, value));
         List entities = criteria.list();
-        SessionFactoryUtils.closeSession(sessionFactory.getCurrentSession());
+//        SessionFactoryUtils.closeSession(sessionFactory.getCurrentSession());
         return entities.size() == 0 ? false : true;
     }
 
@@ -100,7 +100,7 @@ public class GenericDaoImpl<M extends Serializable, PK extends Serializable> imp
         Criteria criteria = sessionFactory.getCurrentSession().createCriteria(type);
         criteria.add(Expression.eq(property, value));
         List list = criteria.list();
-        SessionFactoryUtils.closeSession(sessionFactory.getCurrentSession());
+//        SessionFactoryUtils.closeSession(sessionFactory.getCurrentSession());
         return (M) list.get(0);
     }
 
@@ -109,7 +109,7 @@ public class GenericDaoImpl<M extends Serializable, PK extends Serializable> imp
         Criteria criteria = sessionFactory.getCurrentSession().createCriteria(type);
         criteria.add(Expression.eq(property, value));
         List list = criteria.list();
-        SessionFactoryUtils.closeSession(sessionFactory.getCurrentSession());
+//        SessionFactoryUtils.closeSession(sessionFactory.getCurrentSession());
         return list;
     }
 
@@ -124,24 +124,25 @@ public class GenericDaoImpl<M extends Serializable, PK extends Serializable> imp
             order = "id";
         }
         List<M> lists = session.createQuery(hql).setString(0, order).setFirstResult(startIndex).setMaxResults(numsPerPage).list();
-        SessionFactoryUtils.closeSession(session);
+//        SessionFactoryUtils.closeSession(session);
         return lists;
     }
 
     @Override
-    public List<M> getActiveEntityByPage(int currentPage, int numsPerPage, String order, long groupId) throws DatabaseException {
-        Session session = sessionFactory.getCurrentSession();
-        String hql = "from " + className + " where isActive = ? order by ?";
+    public List<M> getActiveEntityByPage(int currentPage, int numsPerPage, String order) throws DatabaseException {
+
         currentPage = (currentPage < 1) ? 1 : currentPage;
         numsPerPage = (numsPerPage < 1) ? 1 : numsPerPage;
         int startIndex = (currentPage - 1) * numsPerPage;
         if (null == order) {
             order = "id";
         }
+
+        Session session = sessionFactory.getCurrentSession();
         Criteria criteria = session.createCriteria(className);
         criteria.add(Restrictions.eq("isActive", 1)).addOrder(Order.desc(order));
         List<M> lists = criteria.setFirstResult(startIndex).setMaxResults(numsPerPage).list();
-        SessionFactoryUtils.closeSession(session);
+//        SessionFactoryUtils.closeSession(session);
         return lists;
     }
 

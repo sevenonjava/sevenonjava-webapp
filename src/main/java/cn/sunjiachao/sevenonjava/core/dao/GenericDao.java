@@ -100,10 +100,9 @@ public interface GenericDao<M extends Serializable, PK extends Serializable> {
      * @param currentPage 当前页面
      * @param numsPerPage 每页显示多少行
      * @param order       排序字段
-     * @param groupId
      * @return 实体List
      */
-    public List<M> getActiveEntityByPage(int currentPage, int numsPerPage, String order, long groupId) throws DatabaseException;
+    public List<M> getActiveEntityByPage(int currentPage, int numsPerPage, String order) throws DatabaseException;
 
     /**
      * 获取所有对象，包含逻辑删除的
