@@ -1,17 +1,26 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tiles-definitions PUBLIC
-        "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
-        "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
 <tiles-definitions>
     <definition name="front.tpl" template="/WEB-INF/views/layouts/front/common/layout.jsp">
-        <put-attribute name="title" value=""/>
+        <put-attribute name="title" value="front.tpl"/>
         <put-attribute name="libs" value="/WEB-INF/views/layouts/front/common/libs.jsp"/>
-        <put-attribute name="header" value=""/>
+        <put-attribute name="header" value="/WEB-INF/views/layouts/front/common/header.jsp"/>
         <put-attribute name="body" value=""/>
-        <put-attribute name="footer" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/views/layouts/front/common/footer.jsp"/>
     </definition>
     <definition name="default/index" extends="front.tpl">
-        <put-attribute name="title" value=""/>
+        <put-attribute name="title" value="Welcome to SevenOnJava !!!"/>
         <put-attribute name="body" value="/WEB-INF/views/default/index.jsp"/>
+    </definition>
+    <definition name="system/publish" extends="front.tpl">
+        <put-attribute name="title" value="publish哈哈"/>
+        <put-attribute name="body" value="/WEB-INF/views/system/publish.jsp"/>
+    </definition>
+
+    <definition name="article/id" extends="front.tpl">
+        <put-attribute name="title" value="文章内页"/>
+        <put-attribute name="body" value="/WEB-INF/views/article/id.jsp"/>
     </definition>
 </tiles-definitions>

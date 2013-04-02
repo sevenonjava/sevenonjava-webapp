@@ -1,18 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <div class="row-fluid">
     <div class="span9">
+        <form:form action="/publish" method="post" modelAttribute="dto">
+            <input type="text" placeholder="Type something…" class="input-block-level" name="title">
 
-        <input type="text" placeholder="Type something…" class="input-block-level">
+            <textarea id="editor_id" name="content" style="width: 700px;height: 500px">
+                &lt;strong&gt;HTML内容&lt;/strong&gt;
+            </textarea>
 
-        <textarea id="editor_id" name="content" style="width: 700px;height: 500px">
-            &lt;strong&gt;HTML内容&lt;/strong&gt;
-        </textarea>
-
-        <div class="form-actions" style="border: 0;background: #ffffff;text-align: center;padding: 0px">
-            <button type="submit" class="btn btn-primary btn-large">Save changes</button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button type="button" class="btn btn-large">Cancel</button>
-        </div>
+            <div class="form-actions" style="border: 0;background: #ffffff;text-align: center;padding: 0px">
+                <button type="submit" class="btn btn-primary btn-large">Save changes</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="button" class="btn btn-large">Cancel</button>
+            </div>
+        </form:form>
     </div>
 
     <div class="span3">

@@ -35,11 +35,11 @@ public abstract class BaseEntity implements Serializable {
         this.createtime = createdAt;
     }
 
-    public int getActive() {
+    public int getIsActive() {
         return isActive;
     }
 
-    public void setActive(int active) {
+    public void setIsActive(int active) {
         isActive = active;
     }
 
