@@ -28,19 +28,22 @@ public class BlogController extends BaseController {
     }
 
     @RequestMapping(value = "/publish", method = RequestMethod.POST)
-    public ModelAndView publishSubmit(@ModelAttribute Blog blog) {
+    public ModelAndView publishSubmit(String title,String content) {
         Category category = new Category();
         category.setName("test组");
         category.setCreatetime(new Date());
         category.setIsActive(1);
         category.setDesrc("haha");
+        Blog blog = new Blog();
+        blog.setTitle(title);
+        blog.setContent(content);
         Set<Category> set = blog.getCategories();
         set.add(category);
         blog.setCategories(set);
         blog.setIsActive(1);
         blog.setCreatetime(new Date());
         blogService.save(blog);
-        ModelAndView modelAndView = new ModelAndView("system/publish");
+        ModelAndView modelAndView = new ModelAndView("default/index");
         return modelAndView;
     }
 

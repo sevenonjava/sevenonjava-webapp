@@ -4,7 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <div class="row-fluid">
     <div class="span9">
-        <form:form action="/publish" method="post" modelAttribute="dto">
+        <form:form action="/publish" method="post">
             <input type="text" placeholder="Type something…" class="span9" name="title">&nbsp;&nbsp;
             <select name="categories" id="categories" class="span3">
                 <option value="-1">----选择一个标签----</option>

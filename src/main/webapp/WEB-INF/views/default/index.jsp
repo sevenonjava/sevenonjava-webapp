@@ -6,7 +6,7 @@
         <div style="min-height: 800px">
             <c:forEach items="${page.list}" var="i">
                 <div class="article">
-                    <h2><a href="/article/${i.id}">${i.title}</a></h2>
+                    <h2><a href="${pageContext.request.contextPath}/article/${i.id}">${i.title}</a></h2>
 
                     <p>${i.content}</p>
 
@@ -24,7 +24,7 @@
                         <li class="disabled"><a href="#">Prev</a></li>
                     </c:when>
                     <c:otherwise>
-                        <li class=""><a href="${page.currentPage - 1}">Prev</a></li>
+                        <li class=""><a href="${pageContext.request.contextPath}/${page.currentPage - 1}">Prev</a></li>
                     </c:otherwise>
                 </c:choose>
 
@@ -48,7 +48,7 @@
                         <li class="disabled"><a href="#">Next</a></li>
                     </c:when>
                     <c:otherwise>
-                        <li><a href="${page.currentPage + 1}">Next</a></li>
+                        <li><a href="${pageContext.request.contextPath}/${page.currentPage + 1}">Next</a></li>
                     </c:otherwise>
                 </c:choose>
 
