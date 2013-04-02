@@ -5,7 +5,10 @@
 <div class="row-fluid">
     <div class="span9">
         <form:form action="/publish" method="post" modelAttribute="dto">
-            <input type="text" placeholder="Type something…" class="input-block-level" name="title">
+            <input type="text" placeholder="Type something…" class="span9" name="title">&nbsp;&nbsp;
+            <select name="categories" id="categories" class="span3">
+                <option value="-1">----选择一个标签----</option>
+            </select>
 
             <textarea id="editor_id" name="content" style="width: 700px;height: 500px">
                 &lt;strong&gt;HTML内容&lt;/strong&gt;
