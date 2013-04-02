@@ -1,6 +1,10 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="static/plugin/jquery/jquery.js"></script>
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/static/img/ico/my.ico" type="image/x-icon">
+<script src="${pageContext.request.contextPath}/static/plugin/jquery/jquery.js"></script>
+<script src="${pageContext.request.contextPath}/static/plugin/jquery/jquery.form.js"></script>
+<script src="${pageContext.request.contextPath}/static/plugin/jquery/jquery.validate.min.js"></script>
 <!-- Bootstrap -->
-<link href="static/plugin/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-<script src="static/plugin/bootstrap/js/bootstrap.min.js"></script>
+<link href="${pageContext.request.contextPath}/static/plugin/bootstrap/css/bootstrap.min.css" rel="stylesheet"
+      media="screen">
+<script src="${pageContext.request.contextPath}/static/plugin/bootstrap/js/bootstrap.min.js"></script>
