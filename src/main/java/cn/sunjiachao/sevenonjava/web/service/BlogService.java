@@ -2,6 +2,7 @@ package cn.sunjiachao.sevenonjava.web.service;
 
 import cn.sunjiachao.sevenonjava.core.model.Blog;
 import cn.sunjiachao.sevenonjava.core.model.dto.Page;
+import cn.sunjiachao.sevenonjava.web.form.DefaultBlogForm;
 
 import java.util.List;
 
@@ -11,6 +12,6 @@ public interface BlogService {
 
     public Blog findById(Long id);
 
-    public Page<Blog> getBlogsByPage(int currentPage, int numsPerPage, String order);
+    public Page<DefaultBlogForm> getBlogsByPage(int currentPage, int numsPerPage, String order);
 
 }
