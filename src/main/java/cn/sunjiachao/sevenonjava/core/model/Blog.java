@@ -23,6 +23,7 @@ public class Blog extends BaseEntity implements Serializable {
         this.title = title;
     }
 
+    @Column(columnDefinition="LONGTEXT")
     public String getContent() {
         return content;
     }

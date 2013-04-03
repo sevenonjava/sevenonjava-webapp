@@ -18,6 +18,10 @@
         <put-attribute name="title" value="publish哈哈"/>
         <put-attribute name="body" value="/WEB-INF/views/system/publish.jsp"/>
     </definition>
+    <definition name="system/login" extends="front.tpl">
+        <put-attribute name="title" value="登录系统"/>
+        <put-attribute name="body" value="/WEB-INF/views/system/login.jsp"/>
+    </definition>
 
     <definition name="article/id" extends="front.tpl">
         <put-attribute name="title" value="文章内页"/>

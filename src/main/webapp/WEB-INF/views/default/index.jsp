@@ -3,18 +3,19 @@
 <!-- Example row of columns -->
 <div class="row-fluid">
     <div class="span9">
-        <div style="min-height: 800px">
+        <div style="min-height: 1000px">
             <c:forEach items="${page.list}" var="i">
                 <div class="article">
                     <h2><a href="${pageContext.request.contextPath}/article/${i.id}">${i.title}</a></h2>
 
-                    <p>${i.content}</p>
+                    <div style="max-height: 210px;overflow:hidden">${i.content}</div>
 
                     <p>
                         <a class="btn" href="#">查看详情&raquo;</a>
                         <span style="float: right;padding-right: 10px">陈靓波 发布于 ${i.createtime}, 19评/1988阅</span>
                     </p>
                 </div>
+                <hr/>
             </c:forEach>
         </div>
         <div class="pagination" style="text-align: center">
