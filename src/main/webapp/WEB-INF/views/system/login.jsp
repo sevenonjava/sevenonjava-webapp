@@ -11,26 +11,18 @@
                     <legend class="">表单名</legend>
                 </div>
                 <div class="control-group">
-
-                    <!-- Text input-->
                     <label class="control-label">用户名</label>
 
                     <div class="controls">
                         <input placeholder="" name="username" class="input-xlarge" type="text">
-
-                        <p class="help-block"></p>
                     </div>
                 </div>
 
                 <div class="control-group">
-
-                    <!-- Text input-->
                     <label class="control-label">密 码</label>
 
                     <div class="controls">
                         <input placeholder="" name="password" class="input-xlarge" type="password">
-
-                        <p class="help-block"></p>
                     </div>
                 </div>
 
