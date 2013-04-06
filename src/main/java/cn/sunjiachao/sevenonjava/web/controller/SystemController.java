@@ -13,4 +13,10 @@ public class SystemController {
         ModelAndView modelAndView = new ModelAndView("system/login");
         return modelAndView;
     }
+
+    @RequestMapping(value = "system/index", method = RequestMethod.GET)
+    public ModelAndView index() {
+        ModelAndView modelAndView = new ModelAndView("system/index");
+        return modelAndView;
+    }
 }

@@ -5,7 +5,7 @@
     <title>Bootstrap 101 Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link href="static/plugin/bootstrap/css/bootstrap.min.css" rel="stylesheet"
+    <link href="${pageContext.request.contextPath}/static/plugin/bootstrap/css/bootstrap.min.css" rel="stylesheet"
           media="screen">
 </head>
 <body>
@@ -45,8 +45,8 @@
 </div>
 <!-- /container -->
 
-<script src="static/plugin/jquery/jquery.js"></script>
-<script src="static/plugin/bootstrap/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/plugin/jquery/jquery.js"></script>
+<script src="${pageContext.request.contextPath}/static/plugin/bootstrap/js/bootstrap.min.js"></script>
 
 <style type="text/css">
     body {

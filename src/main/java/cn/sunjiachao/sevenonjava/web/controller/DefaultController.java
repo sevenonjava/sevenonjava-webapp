@@ -20,7 +20,7 @@ public class DefaultController {
 
     @RequestMapping(value = "/{p:[0-9][0-9]*}", method = RequestMethod.GET)
     public ModelAndView getBlogsByPage(@PathVariable String p) {
-        Page<DefaultBlogForm> page = blogService.getBlogsByPage(Integer.parseInt(p), 3, null);
+        Page<DefaultBlogForm> page = blogService.getBlogsByPage(Integer.parseInt(p), 10, null);
         ModelAndView modelAndView = new ModelAndView("default/index");
         modelAndView.addObject("page", page);
         return modelAndView;
@@ -28,7 +28,7 @@ public class DefaultController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView index() {
-        Page<DefaultBlogForm> page = blogService.getBlogsByPage(1, 3, null);
+        Page<DefaultBlogForm> page = blogService.getBlogsByPage(1, 10, null);
         ModelAndView modelAndView = new ModelAndView("default/index");
         modelAndView.addObject("page", page);
         return modelAndView;

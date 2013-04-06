@@ -11,8 +11,7 @@
                     <div style="max-height: 210px;overflow:hidden;">${i.excerpt}</div>
 
                     <p style="margin-top: 5px;">
-                        <a class="btn" href="#">查看详情&raquo;</a>
-                        <span style="float: right;padding-right: 10px">陈靓波 发布于 ${i.createtime}, 19评/1988阅</span>
+                        <span style="float: right;padding-right: 10px;">陈靓波 发布于 ${i.createtime}, 19评/1988阅</span>
                     </p>
                 </div>
                 <hr/>

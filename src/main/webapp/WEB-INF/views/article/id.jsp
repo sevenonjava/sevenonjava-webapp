@@ -7,7 +7,7 @@
 <!-- Example row of columns -->
 <div class="row-fluid">
     <div class="span9">
-        <div class="article">
+        <div class="article"  style="border: 1px solid #eee;padding: 5px">
             <h2 style="text-align: center">${blog.title}</h2>
 
             <p style="padding-right: 10px;text-align: right">陈靓波 发布于 ${blog.createtime}</p>
