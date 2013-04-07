@@ -44,7 +44,7 @@
             <tiles:insertAttribute name="leftmenu"/>
         </div>
 
-        <div id="content" class="span9">
+        <div id="content" class="span9 well" style="background-color: #f5f5f5;min-height: 1000px">
             <tiles:insertAttribute name="content"/>
         </div>
     </div>

@@ -1,3 +1,28 @@
-<div class="well" style="background-color: #f5f5f5;min-height: 1000px">
-         1123321332123
+<div>
+    <table class="table">
+        <thead>
+        <tr>
+            <td style="width: 70px">title</td>
+            <td style="width: 300px">content</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>123</td>
+            <td>12323213</td>
+        </tr>
+        <tr>
+            <td>123</td>
+            <td>12323213</td>
+        </tr>
+        <tr>
+            <td>123</td>
+            <td>12323213</td>
+        </tr>
+        <tr>
+            <td>123</td>
+            <td>12323213</td>
+        </tr>
+        </tbody>
+    </table>
 </div>
