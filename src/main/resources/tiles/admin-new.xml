@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+    <definition name="admin.new.tpl" template="/WEB-INF/views/layouts/admin/new/layout.jsp">
+        <put-attribute name="title" value="front.tpl"/>
+        <put-attribute name="libs" value="/WEB-INF/views/layouts/admin/new/libs.jsp"/>
+        <put-attribute name="header" value="/WEB-INF/views/layouts/admin/new/header.jsp"/>
+        <put-attribute name="leftmenu" value="/WEB-INF/views/layouts/admin/new/leftmenu.jsp"/>
+        <put-attribute name="content" value=""/>
+    </definition>
+    <definition name="system/index" extends="admin.new.tpl">
+        <put-attribute name="title" value="Welcome to Admin !!!"/>
+        <put-attribute name="content" value="/WEB-INF/views/system/index.jsp"/>
+    </definition>
+
+
+</tiles-definitions>

@@ -10,10 +10,10 @@
         <put-attribute name="leftmenu" value="/WEB-INF/views/layouts/admin/cool/leftmenu.jsp"/>
         <put-attribute name="content" value=""/>
     </definition>
-    <definition name="system/index" extends="admin.tpl">
-        <put-attribute name="title" value="Welcome to Admin !!!"/>
-        <put-attribute name="content" value="/WEB-INF/views/layouts/admin/cool/content.jsp"/>
-    </definition>
+    <!--<definition name="system/index" extends="admin.tpl">-->
+        <!--<put-attribute name="title" value="Welcome to Admin !!!"/>-->
+        <!--<put-attribute name="content" value="/WEB-INF/views/layouts/admin/cool/content.jsp"/>-->
+    <!--</definition>-->
 
 
 </tiles-definitions>

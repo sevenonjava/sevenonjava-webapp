@@ -5,16 +5,16 @@
     <div class="span9">
         <div style="min-height: 1000px;border: 1px #eee solid;padding: 5px">
             <c:forEach items="${page.list}" var="i">
-                <div class="article">
-                    <h2 style="margin: 0px"><a href="${pageContext.request.contextPath}/article/${i.id}">${i.title}</a></h2>
+                <div class="article" style="">
+                    <h2><a href="${pageContext.request.contextPath}/article/${i.id}">${i.title}</a></h2>
 
                     <div style="max-height: 210px;overflow:hidden;">${i.excerpt}</div>
 
-                    <p style="margin-top: 5px;">
-                        <span style="float: right;padding-right: 10px;">陈靓波 发布于 ${i.createtime}, 19评/1988阅</span>
+                    <p style="margin: 0px">
+                        <span style="float: right">陈靓波 发布于 ${i.createtime}, 19评/1988阅</span>
                     </p>
+                    <hr style="clear: both">
                 </div>
-                <hr/>
             </c:forEach>
         </div>
         <div class="pagination" style="text-align: center">
