@@ -19,4 +19,16 @@ public class SystemController {
         ModelAndView modelAndView = new ModelAndView("system/index");
         return modelAndView;
     }
+
+    @RequestMapping(value = "system/blog/index", method = RequestMethod.GET)
+    public ModelAndView blogList() {
+        ModelAndView modelAndView = new ModelAndView("system/blog/index");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "system/category/index", method = RequestMethod.GET)
+    public ModelAndView categoryList() {
+        ModelAndView modelAndView = new ModelAndView("system/category/index");
+        return modelAndView;
+    }
 }

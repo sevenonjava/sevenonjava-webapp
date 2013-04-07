@@ -11,7 +11,7 @@ import java.util.Date;
 public class DefaultBlogForm implements Serializable {
     private long id;
     private String title;
-    private String excerpt;
+    private String excerpt;//摘要
     private Date createtime;
 
     public long getId() {
