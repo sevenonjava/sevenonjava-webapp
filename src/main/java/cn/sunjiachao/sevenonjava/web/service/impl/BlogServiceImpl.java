@@ -6,6 +6,7 @@ import cn.sunjiachao.sevenonjava.core.model.dto.Page;
 import cn.sunjiachao.sevenonjava.web.dao.BlogDao;
 import cn.sunjiachao.sevenonjava.web.form.DefaultBlogForm;
 import cn.sunjiachao.sevenonjava.web.service.BlogService;
+import cn.sunjiachao.sevenonjava.web.service.exception.BlogException;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Jsoup;
@@ -28,35 +29,34 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     @Transactional(readOnly = false)
-    public void save(Blog blog) {
+    public void save(Blog blog) throws BlogException {
         try {
             blogDao.saveEntity(blog);
         } catch (DatabaseException e) {
-            e.printStackTrace();
+            throw new BlogException("BlogService Save异常");
         }
     }
 
     @Override
-    public Blog findById(Long id) {
+    public Blog findById(Long id) throws BlogException {
         try {
             return blogDao.getEntityById(id);
         } catch (DatabaseException e) {
-            e.printStackTrace();
-            return null;
+            throw new BlogException("BlogService findById异常");
         }
     }
 
     @Override
-    public Page<DefaultBlogForm> getBlogsByPage(int currentPage, int numsPerPage, String order) {
+    public Page<DefaultBlogForm> getBlogsByPage(int currentPage, int numsPerPage, String order) throws BlogException{
         try {
             List<Blog> list = blogDao.getActiveEntityByPage(currentPage, numsPerPage, order);
             List<DefaultBlogForm> forms = new ArrayList<DefaultBlogForm>();
             for (Blog blog : list) {
                 //clean html element
                 DefaultBlogForm form = new DefaultBlogForm();
-                PropertyUtils.copyProperties(form,blog);
-                String cleaned = Jsoup.clean(blog.getContent(),Whitelist.none());
-                String shorted = StringUtils.abbreviate(cleaned,200);
+                PropertyUtils.copyProperties(form, blog);
+                String cleaned = Jsoup.clean(blog.getContent(), Whitelist.none());
+                String shorted = StringUtils.abbreviate(cleaned, 200);
                 form.setExcerpt(shorted);
                 forms.add(form);
             }

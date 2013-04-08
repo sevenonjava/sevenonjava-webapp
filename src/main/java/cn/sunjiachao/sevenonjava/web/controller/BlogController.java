@@ -3,7 +3,9 @@ package cn.sunjiachao.sevenonjava.web.controller;
 import cn.sunjiachao.sevenonjava.core.controller.BaseController;
 import cn.sunjiachao.sevenonjava.core.model.Blog;
 import cn.sunjiachao.sevenonjava.core.model.Category;
+import cn.sunjiachao.sevenonjava.web.controller.exception.WebException;
 import cn.sunjiachao.sevenonjava.web.service.BlogService;
+import cn.sunjiachao.sevenonjava.web.service.exception.BlogException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -28,7 +30,7 @@ public class BlogController extends BaseController {
     }
 
     @RequestMapping(value = "/publish", method = RequestMethod.POST)
-    public ModelAndView publishSubmit(String title,String content) {
+    public ModelAndView publishSubmit(String title, String content) throws WebException {
         Category category = new Category();
         category.setName("test组");
         category.setCreatetime(new Date());
@@ -42,14 +44,23 @@ public class BlogController extends BaseController {
         blog.setCategories(set);
         blog.setIsActive(1);
         blog.setCreatetime(new Date());
-        blogService.save(blog);
+        try {
+            blogService.save(blog);
+        } catch (BlogException e) {
+            throw new WebException("Web Exception...");
+        }
         ModelAndView modelAndView = new ModelAndView("default/index");
         return modelAndView;
     }
 
     @RequestMapping(value = "/article/{id}", method = RequestMethod.GET)
-    public ModelAndView article(@PathVariable("id") String id) {
-        Blog blog = blogService.findById(Long.parseLong(id));
+    public ModelAndView article(@PathVariable("id") String id) throws WebException {
+        Blog blog;
+        try {
+            blog = blogService.findById(Long.parseLong(id));
+        } catch (BlogException e) {
+            throw new WebException("Web Exception...");
+        }
         ModelAndView modelAndView = new ModelAndView("article/id");
         modelAndView.addObject("blog", blog);
         return modelAndView;
