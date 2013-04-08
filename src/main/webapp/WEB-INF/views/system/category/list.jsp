@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <div class="tabbable">
-    <ul class="nav nav-tabs">
+    <ul class="nav nav-tabs " id="mytabs">
         <li class="active"><a href="#pane1" data-toggle="tab">Tab 1</a></li>
         <li><a href="#pane2" data-toggle="tab">Tab 2</a></li>
         <li><a href="#pane3" data-toggle="tab">Tab 3</a></li>
         <li><a href="#pane4" data-toggle="tab">Tab 4</a></li>
     </ul>
-    <div class="tab-content">
+    <div class="tab-content" id="myTabContent">
         <div id="pane1" class="tab-pane active">
             <h4>The Markup</h4>
             <pre>Code here ...</pre>

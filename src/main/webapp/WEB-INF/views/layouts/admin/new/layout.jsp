@@ -40,11 +40,11 @@
 
 <div class="container-fluid">
     <div class="row-fluid">
-        <div id="leftmenu" class="span3">
+        <div id="leftmenu" class="span2">
             <tiles:insertAttribute name="leftmenu"/>
         </div>
 
-        <div id="content" class="span9" style="background-color: #f5f5f5;min-height: 1000px">
+        <div id="content" class="span10" style="background-color: #f5f5f5;min-height: 1000px">
             <tiles:insertAttribute name="rightmenu"/>
             <tiles:insertAttribute name="content"/>
         </div>
