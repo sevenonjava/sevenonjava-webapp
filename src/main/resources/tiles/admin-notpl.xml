@@ -12,4 +12,8 @@
         <put-attribute name="content" value="/WEB-INF/views/system/category/add.jsp"/>
     </definition>
 
+    <definition name="system/category/index" extends="no.tpl">
+        <put-attribute name="content" value="/WEB-INF/views/system/category/list.jsp"/>
+    </definition>
+
 </tiles-definitions>

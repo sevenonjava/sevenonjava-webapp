@@ -9,4 +9,5 @@
         <child-menu id="6" name="账号2管理" i18n="" url="/system/user/index"/>
         <child-menu id="7" name="账号3管理" i18n="" url="/system/user/index"/>
     </menu>
+
 </menus>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<div class="accordion" id="left-acc">
+<div class="accordion well" id="left-acc">
     <c:forEach items="${menus.menus}" var="menus">
         <div class="accordion-group">
             <div class="accordion-heading">
@@ -8,11 +8,11 @@
                         ${menus.name}
                 </a>
             </div>
-            <div id="collapse${menus.id}" class="accordion-body collapse in">
+            <div id="collapse${menus.id}" class="accordion-body collapse">
                 <div class="accordion-inner">
                     <c:forEach items="${menus.childMenuList}" var="i">
                         <div>
-                            <a href="#" class="leftmenu" id="#collapse-inner-${i.id}"
+                            <a href="#" class="leftmenu" id="collapse-inner-${i.id}"
                                data-tab-url="${pageContext.request.contextPath}${i.url}">${i.name}</a>
                         </div>
                     </c:forEach>
