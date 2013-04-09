@@ -216,6 +216,17 @@
             <artifactId>tiles-template</artifactId>
             <version>2.2.2</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-digester3</artifactId>
+            <version>3.2</version>
+            <classifier>with-deps</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.simpleframework</groupId>
+            <artifactId>simple-xml</artifactId>
+            <version>2.7</version>
+        </dependency>
 
         <dependency>
             <!-- jsoup HTML parser library @ http://jsoup.org/ -->

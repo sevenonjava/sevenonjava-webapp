@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menus>
+    <menu id="1" name="内容管理" i18n="">
+        <child-menu id="2" name="文章管理" i18n="" url="/system/blog/index"/>
+        <child-menu id="3" name="类别管理" i18n="" url="/system/category/index"/>
+    </menu>
+    <menu id="4" name="用户管理" i18n="">
+        <child-menu id="5" name="账号管理" i18n="" url="/system/user/index"/>
+        <child-menu id="6" name="账号2管理" i18n="" url="/system/user/index"/>
+        <child-menu id="7" name="账号3管理" i18n="" url="/system/user/index"/>
+    </menu>
+</menus>
